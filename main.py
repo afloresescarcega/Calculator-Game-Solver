@@ -19,7 +19,21 @@ class Solver:
         return first * second
 
     def divide(self, first, second):
-        return first / second
+        # print(first, second)
+        return first // second
+
+    def trimRight(self, first):
+        print(first)
+        return int(str(first)[:-1])
+
+    def appendRight(self, first, second):
+        return int(str(first) + str(second))
+
+    def sub(self, result, match):
+        # substitute match in result
+        things = match.split(',')
+        print(things)
+
 
     def run_functions(self, start, list_to_check):
         result = start
@@ -34,6 +48,15 @@ class Solver:
                 result = self.multiply(result, operand)
             elif op == '/' and operand != 0:
                 result = self.divide(result, operand)
+            elif op == '<': # backspace equivalent
+                if result != 0 and len(str(result)) > 1:
+                    result = self.trimRight(result)
+                else:
+                    result = 0
+            elif op == '>': # append equivalent
+                result = self.appendRight(result, operand)
+            elif op == '!': # substitute equivalent
+                result = self.sub(result, operand)
         return result
     
     def solve(self, start, goal, operators=[], max_moves=10):
@@ -54,7 +77,6 @@ def main():
         goal = int(sys.argv[2])
         max_moves = int(sys.argv[3])
         operators = sys.argv[4].split(' ')
-        print(operators)
     
         # run solver
         result = solver.solve(start, goal, operators, max_moves=max_moves)

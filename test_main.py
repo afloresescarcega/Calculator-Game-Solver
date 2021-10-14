@@ -48,5 +48,11 @@ class TestMain(unittest.TestCase):
     def test_needsRepition(self):
         self.assertEqual(self.solver.solve(0, 20, ["*4","+4"], 3), ('+4', '*4', '+4'))
 
+    def test_trimRightDigit(self):
+        self.assertEqual(self.solver.solve(50, 9, ["/5", "*3", "<0"], 4), ('/5', '*3', '*3', '<0'))
+
+    def test_appendRight(self):
+        self.assertEqual(self.solver.solve(0, 35, ["*2", ">2"], 3), ('>2', '>2', '*2'))
+
 if __name__ == '__main__':
     unittest.main()
