@@ -1,5 +1,5 @@
 # Calculator-Game-Solver
-idk, just a tool to make Calculator Game not fun anymore. ¯\\_(ツ)_/¯ 
+idk, just a tool to make Calculator Game not fun anymore. ¯\\\_(ツ)\_/¯  
 
 This is the game
 https://play.google.com/store/apps/details?id=com.sm.calculateme&hl=en_US&gl=US
